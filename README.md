@@ -82,10 +82,10 @@ Pada tahap ini, akan dilakukan identifikasi jumlah data serta pemeriksaan bebera
 
 ### package
 
-![2]()
+![2](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/package1.png.png)
 
 
-![3]()
+![3](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/package2.png)
 
 Berikut adalah hasil variabel dalam dataset **package**:
 
@@ -101,10 +101,10 @@ Dataset **package** terdiri dari 100 entri dengan 7 variabel, di mana variabel *
 
 ### rating
 
-![4]()
+![4](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/rating1.png)
 
 
-![5]()
+![5](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/rating2.png)
 
 Berikut adalah variabel dalam dataset **rating**:
 
@@ -116,10 +116,10 @@ Dataset **rating** terdiri dari **10.000 data** dengan **3 variabel**. Dalam dat
 
 ### location
 
-![6]()
+![6](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/location.png)
 
 
-![7]()
+![7](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/location2.png)
 
 Berikut adalah variabel dalam dataset **location**:
 
@@ -141,13 +141,13 @@ Dataset **location** memiliki **437 data** dan terdiri dari **13 variabel**, men
 
 ### user
 
-![8]()
+![8](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/rating1.png)
 
 
-![9]()
+![9](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/user2.png)
 
 
-![10]()
+![10](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/user3.png)
 
 Berikut adalah variabel dalam dataset **user**:
 
@@ -173,20 +173,20 @@ Pada tahap ini, empat dataset dibagi menjadi dua kelompok, yaitu **user** dan **
 
 Selain itu, penggabungan dataset **user** dilakukan untuk menghitung jumlah keseluruhan pengguna yang terdaftar.  
 
-![11]()
+![11](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/jumlah%20user.png)
 
 Jumlah total pengguna tercatat sebanyak 300 user.
 
 Selanjutnya, dilakukan penggabungan dataset location untuk menentukan jumlah keseluruhan destinasi wisata yang ada.
 
-![12]()
+![12](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/jumlah%20lokasi.png)
 
 Jumlah total destinasi wisata yang tercatat dalam dataset location adalah 437 data.
 
 ### Mengecek jumlah rating
 Selanjutnya, akan dibuat variabel baru, yaitu place, dengan menggabungkan data rating dan place untuk melihat banyaknya rating dari gabungan data yang ada, pada kasus ini data rating_df dan location_df. Setelah itu, akan dicoba mengecek variabel setelah penggabungan data. Terlihat bahwa variabel memiliki 10000 data rating dari gabungan dataset rating_df dan location_df, serta data ini memiliki nilai null pada kolom time_minutes dan Unnamed: 11. Setelah itu  akan diambil fitur numerik terlebih dahulu, kemudian akan dicari jumlah dari fitur numerik tersebut berdasarkan Place-Id. Berikut adalah hasil dari proses ini, yaitu melihat total rating:
 
-![13]()
+![13](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/jumlah%20rating.png)
 
 
 ## Data Preprocessing untuk *Content Based Filtering*
@@ -205,20 +205,20 @@ Berikut merupakan penjelasan dari masing-masing tahap:
 ### Membuat dataframe untuk Modeling *Content Based Filtering*
 Pada tahap ini, akan dibuat dataframe untuk pembuatan sistem dengan metode *Content Based Filtering*. Langkah pertama akan dibuat dataframe bernama `all_place_name` dengan data dari `rating_df`. Setelah itu, gabungkan dataframe ini dengan kolom `place_name`, `category`, dan `city` dari tabel *location_df* dengan kunci `Place_Id`. Setelah itu akan digabungkan lagi dengan kolom `age` dari tabel *user_df* dengan kunci `User_Id`. Hasil akhir 4 data pertama dataframe ini yaitu:
 
-![14]()
+![14](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Membuat%20dataframe%20untuk%20Modeling%20Content%20Based%20Filtering.png)
 
 
 ### Memeriksa Nilai Null
 Langkah selanjutnya adalah melakukan pengecekan terhadap nilai null, kemudian menganalisis deskripsi fitur numerik. Selain itu, dilakukan pemeriksaan terhadap jumlah data unik dalam kolom Place_Id, Place_Name, dan Category.
 
-![15]()
+![15](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Mengecek%20nilai%20null.png)
 
 Terlihat bahwa data tidak memiliki nilai null, sehingga bisa lanjut ke tahap berikutnya. 
 
 ### Memeriksa Data Duplikat
 Langkah selanjutnya adalah melakukan pengecekan terhadap nilai duplikat dalam dataset untuk memastikan integritas dan keakuratan data yang digunakan.
 
-![24]()
+![24](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Mengecek%20data%20duplikat.png)
 
 
 Terlihat bahwa data tidak memiliki nilai null, sehingga perlu untuk menghapus nilai duplikat tersebut dengan fungsi `drop_duplicated()`
@@ -227,11 +227,11 @@ Terlihat bahwa data tidak memiliki nilai null, sehingga perlu untuk menghapus ni
 Pada tahap ini, dilakukan analisis deskriptif terhadap dataset serta pengecekan jumlah data unik pada kolom Place_Id, Place_Name, dan Location untuk memahami distribusi dan karakteristik data yang tersedia.
 Berikut merupakan deskripsi analisis dari data numerik ini:
 
-![16]()
+![16](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Mengecek%20deskripsi%20analisis%20dan%20banyaknya%20data%20unik.png)
 
 Berikut merupakan deskripsi analisis dari data numerik ini:
 
-![17]()
+![17](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/deskripsi%20analisis%20dari%20data%20numerik.png)
 
 Hasilnya, data telah dipastikan bersih dari **nilai null** dan memiliki **437 nilai unik** pada kolom **Place_Id** serta **Place_Name**. Selain itu, terdapat **6 nilai unik** pada **Category**. Dataset ini juga mencakup **300 pengguna** dengan rentang **rating** antara **1 hingga 5**.  
 
@@ -239,12 +239,12 @@ Hasilnya, data telah dipastikan bersih dari **nilai null** dan memiliki **437 ni
 Pada tahap ini, dilakukan pengecekan ulang terhadap data yang telah melalui proses preprocessing sebelumnya. Setelah itu, data akan diurutkan berdasarkan Place_Id untuk memastikan struktur yang sesuai dengan kebutuhan analisis lebih lanjut.
  Berikut adalah 5 data pertama data tersebut:
 
-![18]()
+![18](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/mengecek%20kembali%20data%20untuk%20Content%20Based%20Filtering.png)
 
 ### Memeriksa Nilai Unik pada Kolom Category
 Langkah berikutnya adalah melakukan pengecekan terhadap nilai unik dalam kolom Category untuk memastikan keberagaman dan keberadaan berbagai kategori tempat wisata yang tersedia dalam dataset.
 
-![19]()
+![19](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/mengecek%20nilai%20unik%20dari%20kolom%20Category.png)
 
 Data dalam dataset memiliki berbagai kategori tempat wisata, yaitu Budaya, Taman Hiburan, Cagar Alam, Pusat Perbelanjaan, dan Tempat Ibadah.
 
@@ -254,7 +254,7 @@ Langkah berikutnya adalah membuat variabel preparation yang akan berisi data dar
 ### Membuat data dictionary untuk modeling
 Pada tahap ini akan dikonversi data series menjadi list, sehingga akan menggunakan fungsi tolist untuk konversi data. Setelah itu membuat data dictionary untuk data place_id, place_name, dan place_cat(place_category). Lalu akan dicek data yang telah dibuat. Berikut merupakan 5 data pertama untuk modeling. 
 
-![20]()
+![20](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Membuat%20data%20dictionary%20untuk%20modeling.png)
 
 Dataframe ini telah siap untuk Langkah selanjutnya. 
 
@@ -262,7 +262,7 @@ Dataframe ini telah siap untuk Langkah selanjutnya.
 Ekstraksi TF-IDF (Term Frequency-Inverse Document Frequency) adalah teknik yang digunakan untuk mengubah teks menjadi representasi numerik dengan mempertimbangkan seberapa sering suatu kata muncul dalam suatu dokumen dibandingkan dengan keseluruhan dokumen.
  Berikut merupakan hasil TF-IDF yang berhasil dibuat:
 
-![21]()
+![21](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/TF-IDF.png)
 
 Sebagai contoh, **Museum Nike Ardilla** memiliki nilai **1** pada kategori **Budaya**, yang menandakan bahwa museum tersebut termasuk dalam kategori **Budaya**, dan konsep ini berlaku untuk destinasi lainnya. 
 
@@ -275,18 +275,18 @@ Pada tahap ini akan dilakukan langkah-langkah berikut:
 ### Membuat Dataframe untuk Modeling Collaborative Filtering
 Langkah pertama dalam proses ini adalah membuat variabel df yang berisi dataset rating_df, yang akan digunakan sebagai dasar dalam penerapan metode Collaborative Filtering.Berikut merupakan hasil encode User_Id:
 
-![26]()
+![26](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Membuat%20dataframe%20untuk%20Modeling%20Collaborative%20Filtering.png)
 
 Setelah itu, dilakukan persiapan data untuk menyandikan (encode) fitur Place_Id ke dalam indeks integer. Berikutnya dilakukan pemetaan userID dan placeID ke dataframe yang berkaitan. Setelah itu mengecek beberapa hal dalam data seperti jumlah user, jumlah tempat wisata, dan mengubah nilai rating menjadi float. Berikut merupakan hasil pengecekan banyaknya *user* dan *place*:
 
-![27]()
+![27](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/hasil%20pengecekan%20banyaknya%20user%20dan%20place.png)
 
 Terlihat bahwa dataframe memiliki data *user* sebanyak 300 data, data *place* sebanyak 437 data, serta data rating dari 1.0 sampai 5.0.
 
 ### Mengacak Data
 Langkah berikutnya adalah mengacak data untuk memastikan distribusinya menjadi random, sehingga model dapat belajar dari berbagai pola tanpa bias terhadap urutan asli data. Berikut adalah hasil 5 data pertama dari acak data:
 
-![28]()
+![28](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Acak%20data.png)
 
 ### Membagi Data Train dan Data Validation
 Langkah berikutnya adalah membagi data train dan data validasi dengan komposisi 80:20 dari data yang telah melalui tahap data preparation.
@@ -303,7 +303,7 @@ Pada tahap ini akan digunakan metode *Content Based Filtering* dan *Collaborativ
 
 *Cosine Similarity* adalah teknik pengukuran kemiripan antar dua vektor berdimensi tinggi yang umum digunakan dalam pembelajaran mesin dan analisis data. Ukuran ini mengkalkulasi nilai kosinus dari sudut antara dua vektor, untuk mengetahui sejauh mana arah keduanya serupa, tanpa memperhatikan besarannya. Pada tahap ini, dilakukan penghitungan tingkat kemiripan antar tempat wisata menggunakan metode *cosine similarity*. Kemudian, ditampilkan matriks kemiripan antara objek wisata, dengan 5 kolom (axis = 1) dan 10 baris (axis = 0). Berikut hasil visualisasinya:
 
-![22]()
+![22](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Cosinus%20Similarity.png)
 
 Sebagai contoh, Curug Cipanas memiliki tingkat kemiripan sebesar 1 dengan Bumi Perkemahan Batu Kuda dan Umbul Sidomukti, yang mengindikasikan bahwa ketiganya memiliki kategori yang sama.
 
@@ -311,11 +311,11 @@ Sebagai contoh, Curug Cipanas memiliki tingkat kemiripan sebesar 1 dengan Bumi P
 
 Selanjutnya dibuat fungsi untuk menghasilkan rekomendasi berdasarkan input nama tempat wisata. Fungsi ini akan menampilkan lima tempat wisata yang paling relevan. Berikut adalah contoh input rekomendasi:
 
-![23]()
+![23](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Membuat%20fungsi%20rekomendasi%20dan%20melihat%20hasil%20rekomendasi.png)
 
 Dan berikut adalah hasil rekomendasi yang diberikan oleh sistem:
 
-![25]()
+![25](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/hasil%20rekomendasi%20dari%20input%20yang%20telah%20dimasukkan.png)
 
 Hasil menunjukkan bahwa sistem merekomendasikan tempat wisata yang berada dalam kategori serupa, yaitu cagar alam.
 
@@ -335,13 +335,13 @@ Langkah awal adalah membangun model *RecommenderNet* menggunakan class `Model` d
 
 Untuk memantau performa model selama pelatihan, dibuat grafik visualisasi menggunakan *matplotlib* yang menampilkan metrik evaluasi. Berikut adalah hasil visualisasinya:
 
-![29]()
+![29](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/visualisasi%20metrik.png)
 
 ### 3. Proses Rekomendasi
 
 Sebelum menghasilkan rekomendasi, disiapkan terlebih dahulu daftar tempat wisata yang belum dikunjungi oleh pengguna, karena item inilah yang akan direkomendasikan. Kemudian dilakukan prediksi untuk menghasilkan 10 tempat wisata dengan skor tertinggi. Berikut adalah hasil rekomendasinya:
 
-![30]()
+![30](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/hasil%2010%20rekomendasi%20wisata%20berdasarkan%20rating.png)
 ### Kelebihan dan Kekurangan
 
 Dibandingkan *content-based filtering*, metode *collaborative filtering* lebih unggul dalam memberikan rekomendasi yang lebih beragam karena memanfaatkan pola interaksi dari pengguna lain dengan minat serupa. Namun, metode ini memiliki kelemahan yaitu *cold start problem*, yang terjadi ketika ada pengguna atau item baru yang belum memiliki riwayat interaksi, sehingga sistem kesulitan dalam memberikan rekomendasi yang relevan.
@@ -366,19 +366,19 @@ Sebelum membahas *Precision*, perlu dipahami terlebih dahulu mengenai *Confusion
 
 Salah satu metrik yang dapat diperoleh dari *Confusion Matrix* adalah *Precision*. *Precision* merupakan metrik penting dalam menilai sistem pencarian informasi karena mengukur tingkat ketepatan model dalam merekomendasikan item yang relevan dengan kebutuhan pengguna. Oleh karena itu, *Precision* menjadi metrik yang tepat untuk mengevaluasi pendekatan *Content-Based Filtering*. Rumus *Precision* untuk sistem rekomendasi dapat dilihat pada gambar berikut:
 
-![31]()
+![31](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/precision2.png)
 
 Dalam konteks sistem rekomendasi, *Precision\@K* dihitung sebagai rasio antara jumlah item relevan yang berhasil direkomendasikan dengan total item yang disarankan dalam daftar sepanjang K. Artinya, metrik ini menunjukkan seberapa banyak item yang direkomendasikan ternyata benar-benar relevan. Rumus lengkapnya dapat dilihat di bawah ini:
 
-![32]()
+![32](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/precision%20at%20k.png)
 
 Mengacu pada rumus tersebut, dilakukan penghitungan *Precision* pada sistem rekomendasi berbasis *Content-Based Filtering*. Berikut adalah data input yang digunakan:
 
-![23]()
+![23](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/Membuat%20fungsi%20rekomendasi%20dan%20melihat%20hasil%20rekomendasi.png)
 
 Data tersebut menggunakan tempat wisata "Kebun Binatang Ragunan" yang memiliki kategori *Cagar Alam*. Berdasarkan data input ini, sistem memberikan lima rekomendasi seperti yang terlihat berikut:
 
-![25]()
+![25](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/hasil%20rekomendasi%20dari%20input%20yang%20telah%20dimasukkan.png)
 
 Dari hasil di atas, dapat dilihat bahwa kelima rekomendasi memiliki kategori yang sama, yaitu *Cagar Alam*. Maka, berdasarkan rumus sebelumnya:
 
@@ -394,7 +394,7 @@ Artinya, sistem rekomendasi berbasis *Content-Based Filtering* menghasilkan nila
 
 Untuk mengevaluasi model *Collaborative Filtering*, digunakan metrik RMSE (*Root Mean Square Error*) karena RMSE cocok dalam mengevaluasi prediksi numerik seperti prediksi rating pengguna. RMSE sendiri merupakan ukuran deviasi standar dari selisih antara nilai prediksi dan nilai aktual. Karena formula RMSE sejatinya merupakan bentuk standar dari deviasi residual, maka rumus ini umumnya sudah dikenal dalam analisis statistik. Rumus tersebut menghitung seberapa besar penyimpangan antara nilai observasi dan prediksi. Berikut adalah rumus dari RMSE:
 
-![33]()
+![33](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/RMSE.png)
 
 Keterangan:
 
@@ -405,7 +405,7 @@ Keterangan:
 
 RMSE digunakan untuk menilai performa model berdasarkan seberapa besar kesalahan saat proses pelatihan berlangsung. Di bawah ini ditampilkan visualisasi hasil pelatihan model pada proyek ini:
 
-![29]()
+![29](https://github.com/baiq99/recomendation_analitycs/blob/980868ecb200b15117375fd12d6067465bf9d847/images/visualisasi%20metrik.png)
 
 Berdasarkan grafik di atas, diperoleh nilai RMSE pada data pelatihan sebesar **0.3144**, dan nilai RMSE pada data validasi sebesar **0.3661**. Ini menunjukkan bahwa model *Collaborative Filtering* yang dibangun telah menunjukkan kinerja yang baik dalam menghasilkan prediksi rating yang akurat.
 
